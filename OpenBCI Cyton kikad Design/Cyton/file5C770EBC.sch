@@ -1,0 +1,50 @@
+EESchema Schematic File Version 4
+LIBS:Cyton-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L openbci:ADS1299 IC?
+U 1 1 5C770F94
+P 5350 3200
+F 0 "IC?" H 5325 4915 50  0000 C CNN
+F 1 "ADS1299" H 5325 4824 50  0000 C CNN
+F 2 "" H 5150 2800 50  0001 C CNN
+F 3 "" H 5150 2800 50  0001 C CNN
+	1    5350 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 5C7DC73F
+P 6950 5800
+F 0 "#PWR?" H 6950 5550 50  0001 C CNN
+F 1 "GNDA" H 6955 5627 50  0000 C CNN
+F 2 "" H 6950 5800 50  0001 C CNN
+F 3 "" H 6950 5800 50  0001 C CNN
+	1    6950 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5C7DC786
+P 7450 5850
+F 0 "#PWR?" H 7450 5600 50  0001 C CNN
+F 1 "GNDD" H 7454 5695 50  0000 C CNN
+F 2 "" H 7450 5850 50  0001 C CNN
+F 3 "" H 7450 5850 50  0001 C CNN
+	1    7450 5850
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

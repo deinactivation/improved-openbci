@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name openbci)(type Legacy)(uri "C:/Users/John Doe/Documents/OpenBCI/V3_Hardware_Design_Files/OpenBCI Cyton kikad Design/Cyton/openbci.lib")(options "")(descr ""))
+  (lib (name Cyton-rescue)(type Legacy)(uri ${KIPRJMOD}/Cyton-rescue.lib)(options "")(descr ""))
 )

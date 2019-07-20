@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:Cyton-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 4
 Title "OpenBCI_Cyton_Plus"
 Date "2019-02-19"
 Rev "1"
@@ -14,75 +14,150 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L openbci:ADS1299 IC1
-U 1 1 5C6C72B0
-P 9950 2400
-F 0 "IC1" H 9925 4115 50  0000 C CNN
-F 1 "ADS1299" H 9925 4024 50  0000 C CNN
-F 2 "Package_QFP:LQFP-64_7x7mm_P0.4mm" H 9750 2000 50  0001 C CNN
-F 3 "" H 9750 2000 50  0001 C CNN
-	1    9950 2400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Battery_Cell BT1
-U 1 1 5C6CC419
-P 1000 1350
-F 0 "BT1" H 1118 1446 50  0000 L CNN
-F 1 "Battery_Cell" H 1118 1355 50  0000 L CNN
-F 2 "Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal" V 1000 1410 50  0001 C CNN
-F 3 "~" V 1000 1410 50  0001 C CNN
-	1    1000 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D1
-U 1 1 5C6CCD6A
-P 1250 1000
-F 0 "D1" H 1250 784 50  0000 C CNN
-F 1 "D" H 1250 875 50  0000 C CNN
-F 2 "" H 1250 1000 50  0001 C CNN
-F 3 "~" H 1250 1000 50  0001 C CNN
-	1    1250 1000
-	-1   0    0    1   
-$EndComp
+Text Notes 5050 1000 0    157  ~ 31
+OVERVIEW
+$Sheet
+S 4700 2600 1550 1700
+U 5C770EBD
+F0 "Controller" 50
+F1 "uC.sch" 50
+F2 "SPI_SCK" O R 6250 3400 50 
+F3 "SPI_MOSI" O R 6250 3300 50 
+F4 "SPI_MISO" I R 6250 3500 50 
+F5 "RESET#" I L 4700 2900 50 
+F6 "DigitalGround" I L 4700 3950 50 
+F7 "Digital3V3" I L 4700 3850 50 
+F8 "SPI_CS1#" O R 6250 3100 50 
+F9 "SPI_CS2#" O R 6250 3200 50 
+$EndSheet
+$Sheet
+S 1050 2550 1350 900 
+U 5C7D67F3
+F0 "Power" 50
+F1 "Power.sch" 50
+F2 "DigitalGround" O R 2400 3350 50 
+F3 "AnalogGround" O R 2400 2800 50 
+F4 "Analog3V3" O R 2400 2700 50 
+F5 "+2.5" O R 2400 2950 50 
+F6 "-2.5" O R 2400 3050 50 
+F7 "Digital3V3" O R 2400 3250 50 
+$EndSheet
+$Sheet
+S 8650 900  1450 1600
+U 5C7DFA68
+F0 "Analog Front End 1" 50
+F1 "AFE.sch" 50
+F2 "SPI_SCK" I L 8650 2100 50 
+F3 "SPI_MOSI" I L 8650 2000 50 
+F4 "SPI_CS#" I L 8650 2300 50 
+F5 "SPI_MISO" O L 8650 2200 50 
+F6 "DAISY_IN" I L 8650 2400 50 
+F7 "3V3" I L 8650 1800 50 
+F8 "AGND" I L 8650 1900 50 
+F9 "+2V5" I L 8650 1600 50 
+F10 "-2V5" I L 8650 1700 50 
+$EndSheet
+Text Notes 5450 2800 2    39   ~ 8
+Reset is open collector
 Wire Wire Line
-	1000 1150 1000 1000
+	2400 3350 3200 3350
 Wire Wire Line
-	1000 1000 1100 1000
-$Comp
-L power:GND #PWR01
-U 1 1 5C6CCE9B
-P 1000 1550
-F 0 "#PWR01" H 1000 1300 50  0001 C CNN
-F 1 "GND" H 1005 1377 50  0000 C CNN
-F 2 "" H 1000 1550 50  0001 C CNN
-F 3 "" H 1000 1550 50  0001 C CNN
-	1    1000 1550
-	1    0    0    -1  
-$EndComp
+	3200 3350 3200 3950
 Wire Wire Line
-	1000 1450 1000 1550
-Text Notes 2200 2250 0    79   ~ 0
-+3V REGULATOR
-Text Notes 2150 950  0    79   ~ 0
-VOLTAGE INVERTER
-Text Notes 3800 950  0    79   ~ 0
--2.5V REGULATOR
-Text Notes 3800 2250 0    79   ~ 0
-+2.5V REGULATOR
-Text Notes 5800 2250 0    79   ~ 0
-DECOUPLING
-$Comp
-L Device:Ferrite_Bead FB1
-U 1 1 5C6D77AD
-P 6950 950
-F 0 "FB1" V 6676 950 50  0000 C CNN
-F 1 "Ferrite_Bead" V 6767 950 50  0000 C CNN
-F 2 "" V 6880 950 50  0001 C CNN
-F 3 "~" H 6950 950 50  0001 C CNN
-	1    6950 950 
-	0    1    1    0   
-$EndComp
+	3200 3950 4700 3950
+Wire Wire Line
+	2400 3250 3300 3250
+Wire Wire Line
+	3300 3250 3300 3850
+Wire Wire Line
+	3300 3850 4700 3850
+Wire Wire Line
+	3100 1900 3100 2800
+Wire Wire Line
+	3100 2800 2400 2800
+Wire Wire Line
+	3100 1900 7450 1900
+Wire Wire Line
+	2400 2700 3000 2700
+Wire Wire Line
+	3000 2700 3000 1800
+Wire Wire Line
+	3000 1800 7550 1800
+Wire Wire Line
+	7450 3850 8650 3850
+Wire Wire Line
+	7450 1900 7450 3850
+Wire Wire Line
+	7550 1800 7550 3750
+Wire Wire Line
+	7550 3750 8650 3750
+Wire Wire Line
+	6250 3300 7350 3300
+Wire Wire Line
+	7350 3300 7350 3950
+Wire Wire Line
+	6250 3400 7250 3400
+Wire Wire Line
+	7250 3400 7250 4050
+Wire Wire Line
+	6250 3500 7150 3500
+Wire Wire Line
+	7150 3500 7150 4150
+Wire Wire Line
+	7350 3300 7350 2000
+Connection ~ 7350 3300
+Wire Wire Line
+	7250 3400 7250 2100
+Connection ~ 7250 3400
+Wire Wire Line
+	7150 3500 7150 2200
+Connection ~ 7150 3500
+Wire Wire Line
+	6250 3200 7050 3200
+Wire Wire Line
+	7050 3200 7050 4250
+Wire Wire Line
+	6250 3100 7050 3100
+Wire Wire Line
+	7050 3100 7050 2300
+Connection ~ 7550 1800
+Connection ~ 7450 1900
+Wire Wire Line
+	2400 2950 3200 2950
+Wire Wire Line
+	3200 2950 3200 1600
+Wire Wire Line
+	2400 3050 3300 3050
+Wire Wire Line
+	3300 3050 3300 1700
+Wire Wire Line
+	7650 1700 7650 3650
+Wire Wire Line
+	7650 3650 8650 3650
+Connection ~ 7650 1700
+Wire Wire Line
+	7750 1600 7750 3550
+Wire Wire Line
+	7750 3550 8650 3550
+Connection ~ 7750 1600
+Wire Wire Line
+	3200 1600 7750 1600
+Wire Wire Line
+	3300 1700 7650 1700
+Wire Wire Line
+	7050 2300 8650 2300
+Wire Wire Line
+	7150 2200 8650 2200
+Wire Wire Line
+	7250 2100 8650 2100
+Wire Wire Line
+	7350 2000 8650 2000
+Wire Wire Line
+	7450 1900 8650 1900
+Wire Wire Line
+	7750 1600 8650 1600
+Wire Wire Line
+	7650 1700 8650 1700
+Wire Wire Line
+	7550 1800 8650 1800
 $EndSCHEMATC
